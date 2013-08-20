@@ -1,4 +1,4 @@
-AutofacModuleSample
-===================
+AutofacModularity
+=================
 
-A project using Autofac and its capabilities to implement a multi layered architecuture with plugin capabilities and an easy way of configuration.
+A project providing extensions for Autofac to enhance module scanning and make configuration easier.
