@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AutofacModules.Base
+namespace AutofacModularity
 {
     
     [AttributeUsage(AttributeTargets.Class)]

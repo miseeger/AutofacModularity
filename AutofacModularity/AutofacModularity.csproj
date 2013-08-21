@@ -54,6 +54,7 @@
     <Compile Include="RegisterServiceAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="AutofacModularity.1.0.0.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

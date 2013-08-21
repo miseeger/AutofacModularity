@@ -7,12 +7,12 @@ namespace AutofacModularity
     public abstract class AbstractBootstrapper : IRunnable
     {
 
-        protected abstract void ConfigureContainer();
+        protected abstract void ConfigureContainer(ContainerBuilder builder);
 
         public void Run()
         {
             var builder = new ContainerBuilder();
-            ConfigureContainer();
+            ConfigureContainer(builder);
 			DiRepository.Instance.Container = builder.Build();
         }
 
