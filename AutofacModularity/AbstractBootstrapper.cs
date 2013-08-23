@@ -8,12 +8,30 @@ namespace AutofacModularity
     {
 
         protected abstract void ConfigureContainer(ContainerBuilder builder);
+        protected abstract void RegisterShell(ContainerBuilder builder);
 
         public void Run()
         {
             var builder = new ContainerBuilder();
+            
             ConfigureContainer(builder);
-			DiRepository.Instance.Container = builder.Build();
+            RegisterShell(builder);
+            
+            var container = builder.Build();
+            
+            if (container.IsRegistered<IShell>())
+            {
+            	var Shell = container.Resolve<IShell>();
+            	if (Shell != null) 
+            	{
+            		Shell.Run();
+           		 }
+            	
+            }
+            else
+            {
+            	DiRepository.Instance.Container = container;
+            }
         }
 
     }

@@ -50,6 +50,7 @@
     <Compile Include="DiRepository.cs" />
     <Compile Include="Interfaces\IPlugin.cs" />
     <Compile Include="Interfaces\IRunnable.cs" />
+    <Compile Include="Interfaces\IShell.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisterServiceAttribute.cs" />
   </ItemGroup>
