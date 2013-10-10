@@ -7,17 +7,32 @@ namespace AutofacModularity
     public abstract class AbstractBootstrapper : IRunnable
     {
 
-        protected abstract void ConfigureContainer(ContainerBuilder builder);
-        protected abstract void RegisterShell(ContainerBuilder builder);
+        protected virtual void ConfigureContainer(ContainerBuilder builder)
+        {
+        }
+        
+        protected virtual void RegisterShell(ContainerBuilder builder)
+        {
+        }
+        
+        protected virtual void PostConfigureContainer(IContainer container)
+        {
+        }
+        
+        protected virtual void RunAsShell(IContainer container)
+        {
+        }
 
         public void Run()
         {
             var builder = new ContainerBuilder();
             
-            ConfigureContainer(builder);
             RegisterShell(builder);
+            ConfigureContainer(builder);
             
             var container = builder.Build();
+            
+            PostConfigureContainer(container);
             
             if (container.IsRegistered<IShell>())
             {
@@ -26,11 +41,11 @@ namespace AutofacModularity
             	{
             		Shell.Run();
            		 }
-            	
             }
             else
             {
             	DiRepository.Instance.Container = container;
+            	RunAsShell(container);
             }
         }
 
