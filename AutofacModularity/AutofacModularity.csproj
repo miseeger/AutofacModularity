@@ -53,9 +53,11 @@
     <Compile Include="Interfaces\IShell.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisterServiceAttribute.cs" />
+    <Compile Include="RegisterServicePerDependencyAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="AutofacModularity.1.0.0.nuspec" />
+    <None Include="AutofacModularity.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
