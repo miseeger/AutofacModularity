@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>AutofacModularity</id>
+        <version>1.0.2</version>
+        <title>Autofac Modularity Extension</title>
+        <authors>miseeger</authors>
+        <owners>miseeger</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>A small library to extend modularity with Autofac</description>
+        <copyright />
+        <dependencies>
+            <dependency id="Autofac" version="3.1.1" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="bin\Release\AutofacModularity.dll" target="lib\net40\AutofacModularity.dll" />
+    </files>
+</package>
