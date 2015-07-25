@@ -23,7 +23,7 @@ namespace AutofacModularity
         {
         }
 
-        public void Run()
+		public void Run(string[] args)
         {
             var builder = new ContainerBuilder();
             
@@ -36,10 +36,10 @@ namespace AutofacModularity
             
             if (container.IsRegistered<IShell>())
             {
-            	var Shell = container.Resolve<IShell>();
-            	if (Shell != null) 
+            	var shell = container.Resolve<IShell>();
+            	if (shell != null) 
             	{
-            		Shell.Run();
+            		shell.Run(args);
            		 }
             }
             else
