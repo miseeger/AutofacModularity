@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>AutofacModularity</id>
         <version>3.5.2</version>
@@ -8,12 +8,14 @@
         <owners>miseeger</owners>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>A small library to extend modularity with Autofac 3.5.2</description>
-        <copyright />
+        <releaseNotes>Prevent Exceptions if the property key has a typo. Now dependend on AutoFac 3.5.2</releaseNotes>
+        <copyright>2013-2015</copyright>
+        <tags>Autofac</tags>
         <dependencies>
             <dependency id="Autofac" version="3.5.2" />
         </dependencies>
     </metadata>
     <files>
-        <file src="bin\Release\AutofacModularity.dll" target="lib\net40\AutofacModularity.dll" />
+        <file src="bin\Release\AutofacModularity.dll" target="lib\net451\AutofacModularity.dll" />
     </files>
 </package>
