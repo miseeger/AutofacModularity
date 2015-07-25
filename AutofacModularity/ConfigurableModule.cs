@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using System.Diagnostics;
 using System.Linq;
 using Autofac;
 
@@ -20,9 +21,17 @@ namespace AutofacModularity
                 var parts = propertyKey.Split('.');
                 var propertyName = parts[1];
                 var value = settings[propertyKey];
-
                 var property = GetType().GetProperty(propertyName);
-                property.SetValue(this, Convert.ChangeType(value, property.PropertyType), null);
+	            
+				if (property != null)
+	            {
+					property.SetValue(this, Convert.ChangeType(value, property.PropertyType), null);    
+	            }
+				else
+				{
+					Debug.WriteLine(String.Format("Could not find Property {0} in {1}", 
+						propertyName, propertyKey.Split('.')[0] + "Module"));
+				}
             }
         }
 
