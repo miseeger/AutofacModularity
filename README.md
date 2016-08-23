@@ -61,6 +61,10 @@ All registration will be done here.
 
 In this implementation only the service classes decorated with the `RegisterServiceAttribute`
 will definitely be registered.
+
+The Data-Layer (here: `AfMulti.Common.Data.dll`) should be registered as `InstancePerDependency`
+because a Singleton could result in confusion when the data service ist injected into an WebAPI-
+Controller. So just use this default lifecycle.
  
 ```csharp
 	public class CommonServicesModule : ConfigurableModule
@@ -102,7 +106,7 @@ will definitely be registered.
                         new NamedParameter("dbActiveConnection", DbActiveConnection),
                         new NamedParameter("option", Option)
                     })
-                .SingleInstance();
+                .InstancePerDependency();
         }
 
     }	
